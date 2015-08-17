@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>PC CATHEDRAL TOUR</title>
+		<meta charset="utf-8">
+		<style>
+			body {
+				background-color: #000000;
+				margin: 0;
+				cursor: move;
+				overflow: hidden;
+			}
+
+			a {
+				color: #ffffff;
+			}
+
+			#info {
+				position: absolute;
+				width: 100%;
+				color: #ffffff;
+				padding: 5px;
+				font-family: Monospace;
+				font-size: 13px;
+				font-weight: bold;
+				text-align: center;
+				z-index: 1;
+			}
+		</style>
+		
+		<script type="text/javascript" src="js/three.js"></script>
+		<script type="text/javascript" src="js/CSS3DRenderer.js"></script>
+		<script type="text/javascript" src="js/CSS3DStereoRenderer.js"></script>
+		<script type="text/javascript" src="js/StereoEffect.js"></script>
+		<script type="text/javascript" src="js/OculusRiftEffect.js"></script>
+		<script type="text/javascript" src="js/DeviceOrientationControls.js"></script>
+		<script type="text/javascript" src="js/thiea.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/swfobject.js"></script>
+	</head>
+	<body>
+		<script>			
+			var panos = []; 
+			window.onload = function()
+			{				
+				var url = decodeURIComponent(swfobject.getQueryParamValue("xml"));
+				if(!url) url = 'xml/cathedral.xml';
+				$.ajax({
+					url: url,
+					crossDomain: true,
+					type: 'get',
+					timeout: 6000,
+					dataType: 'xml',
+					success: function(xml)
+					{
+						init("mobile");
+						/*$('#image').attr('src', '<?=$img?>');
+						$('#title').html( $(xml).find('title').text());
+						$('#headnote').html($(xml).find('headnote').text());*/
+						var lineNumber = 0;
+						$(xml).find('pano').each(function() {
+							var left = $(this).find('left').text();
+							var right = $(this).find('right').text();
+							var up = $(this).find('up').text();
+							var down = $(this).find('down').text();
+							var front = $(this).find('front').text();
+							var back = $(this).find('back').text();
+							var toRenderFirst = JSON.parse($(this).find('toRenderFirst').text());
+							var audioFile = $(this).find('audioFile').text();
+							if(audioFile == "null")
+								audioFile = null;
+							var type = $(this).find('type').text();
+							var description = $(this).find('description').text();
+							var latitude = $(this).find('latitude').text();
+							if(latitude == "null")
+								latitude = null;
+							else
+								latitude = eval(latitude);
+							var longitude = $(this).find('latitude').text();
+							if(longitude == "null")
+								longitude = null;
+							else
+								longitude = eval(longitude);
+							var name = $(this).find('name').text();
+							var id = $(this).find('id').text();
+							var rx = 0, ry = 0, rz = 0;
+							if($(this).find('rx').text()) rx = eval($(this).find('rx').text());
+							if($(this).find('ry').text()) ry = eval($(this).find('ry').text());
+							if($(this).find('rz').text()) rz = eval($(this).find('rz').text());
+							panos[id] = createPano(left, right, up, down, front, back, toRenderFirst, audioFile, type, description, latitude, longitude, name, [rx, ry, rz]);
+						});
+
+						$(xml).find('hotspot').each(function() {
+							var type = $(this).find('type').text();
+							var parentPano = panos[$(this).find('parentPano').text()];
+							var value = $(this).find('value').text();
+							if(type == 'toPano')
+								value = panos[value];
+							var transition = $(this).find('transition').text();
+							if(transition == "null")
+								transition = null;
+							var x = eval($(this).find('x').text());
+							var y = eval($(this).find('y').text());
+							var z = eval($(this).find('z').text());
+							var rx = eval($(this).find('rx').text());
+							var ry = eval($(this).find('ry').text());
+							var rz = eval( $(this).find('rz').text());
+							var thumbnail = $(this).find('thumbnail').text();
+							if(!thumbnail || thumbnail == "null")
+								thumbnail = null;
+							createHotspot(type, parentPano, value, transition, x, y, z, rx, ry, rz, thumbnail);
+						});
+						if($(xml).find('startnode').text())
+							renderPano(panos[$(xml).find('startnode').text()]);
+						animate("mobile");
+				},
+				error: function (xhr, ajaxOptions, thrownError){
+					console.log(xhr.status);
+					console.log(thrownError);
+				}
+			});
+
+				
+			}
+		</script>
+	</body>
+</html>

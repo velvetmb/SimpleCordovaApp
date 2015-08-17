@@ -1,0 +1,262 @@
+<panotour>
+	<panos>
+
+		<pano>
+			<right>images/quickview/NorthPier-LoRes.jpg</right>
+			<toRenderFirst>false</toRenderFirst>
+			<audioFile>null</audioFile>
+			<type>equirectangularpano</type>
+			<description>Select a menu item to begin.</description>
+			<latitude>null</latitude>
+			<longitude>null</longitude>
+			<name>A</name>
+			<id>NorthPier-LoRes</id>
+		</pano>
+
+		<pano>
+			<right>images/quickview/SouthPier-LoRes.jpg</right>
+			<toRenderFirst>false</toRenderFirst>
+			<audioFile>null</audioFile>
+			<type>equirectangularpano</type>
+			<description>Select a menu item to begin.</description>
+			<latitude>null</latitude>
+			<longitude>null</longitude>
+			<name>A</name>
+			<id>SouthPier-LoRes</id>
+		</pano>
+
+		<pano>
+			<right>images/quickview/Theta-QueensferryWall.jpg</right>
+			<toRenderFirst>false</toRenderFirst>
+			<audioFile>null</audioFile>
+			<type>equirectangularpano</type>
+			<description>Select a menu item to begin.</description>
+			<latitude>null</latitude>
+			<longitude>null</longitude>
+			<name>A</name>
+			<id>Theta-QueensferryWall</id>
+		</pano>
+
+
+		<pano>
+			<right>images/quickview/Theta-InnerBridgeTilt.jpg</right>
+			<toRenderFirst>false</toRenderFirst>
+			<audioFile>null</audioFile>
+			<type>equirectangularpano</type>
+			<description>Select a menu item to begin.</description>
+			<latitude>null</latitude>
+			<longitude>null</longitude>
+			<name>A</name>
+			<ry>-Math.PI/2</ry>
+			<rx>Math.PI</rx>
+			<rz>2.5</rz>
+			<id>Theta-InnerBridgeTilt</id>
+		</pano>
+
+		<pano>
+			<right>images/quickview/Theta-WestView.jpg</right>
+			<toRenderFirst>false</toRenderFirst>
+			<audioFile>null</audioFile>
+			<type>equirectangularpano</type>
+			<description>Select a menu item to begin.</description>
+			<latitude>null</latitude>
+			<longitude>null</longitude>
+			<name>A</name>
+			<id>Theta-WestView</id>
+		</pano>
+
+		<pano>
+			<right>images/quickview/Theta-UnderBridge.jpg</right>
+			<toRenderFirst>false</toRenderFirst>
+			<audioFile>null</audioFile>
+			<type>equirectangularpano</type>
+			<description>Select a menu item to begin.</description>
+			<latitude>null</latitude>
+			<longitude>null</longitude>
+			<name>A</name>
+			<id>Theta-UnderBridge</id>
+		</pano>
+
+		<pano>
+			<right>images/quickview/Theta-RoadTrees.jpg</right>
+			<toRenderFirst>false</toRenderFirst>
+			<audioFile>null</audioFile>
+			<type>equirectangularpano</type>
+			<description>Select a menu item to begin.</description>
+			<latitude>null</latitude>
+			<longitude>null</longitude>
+			<name>A</name>
+			<id>Theta-RoadTrees</id>
+		</pano>
+
+	</panos>
+	<hotspots>
+
+		<!--
+		<hotspot>
+			<type>toPano</type>
+			<parentPano>Theta-PierWall</parentPano>
+			<value>Theta-QueensferryWall</value>
+			<transition></transition>
+			<x>100</x>
+			<y>0</y>
+			<z>510</z>
+			<rx>0</rx>
+			<ry>0</ry>
+			<rz>0</rz>
+		</hotspot>
+-->
+
+		<hotspot>
+			<type>toPano</type>
+			<parentPano>SouthPier-LoRes</parentPano>
+			<value>NorthPier-LoRes</value>
+			<transition>images/quickview/Theta-RoadTrees.jpg</transition>
+			<x>100</x>
+			<y>0</y>
+			<z>510</z>
+			<rx>0</rx>
+			<ry>0</ry>
+			<rz>0</rz>
+		</hotspot>
+
+		<hotspot>
+			<type>toPano</type>
+			<parentPano>NorthPier-LoRes</parentPano>
+			<value>Theta-QueensferryWall</value>
+			<transition>images/quickview/Theta-RoadTrees.jpg</transition>
+			<x>100</x>
+			<y>0</y>
+			<z>510</z>
+			<rx>0</rx>
+			<ry>0</ry>
+			<rz>0</rz>
+		</hotspot>
+
+		<hotspot>
+			<type>toPano</type>
+			<parentPano>Theta-QueensferryWall</parentPano>
+			<value>Theta-InnerBridgeTilt</value>
+			<transition>images/quickview/Theta-RoadTrees.jpg</transition>
+			<x>100</x>
+			<y>0</y>
+			<z>510</z>
+			<rx>0</rx>
+			<ry>0</ry>
+			<rz>0</rz>
+		</hotspot>
+
+		<!--
+		<hotspot>
+			<type>toPano</type>
+			<parentPano>Theta-InnerBridge</parentPano>
+			<value>Theta-InnerBridgeTilt</value>
+			<transition></transition>
+			<x>100</x>
+			<y>0</y>
+			<z>510</z>
+			<rx>0</rx>
+			<ry>0</ry>
+			<rz>0</rz>
+		</hotspot>
+		-->
+
+		<hotspot>
+			<type>toPano</type>
+			<parentPano>Theta-InnerBridgeTilt</parentPano>
+			<value>Theta-WestView</value>
+			<transition>images/quickview/Theta-RoadTrees.jpg</transition>
+			<x>100</x>
+			<y>0</y>
+			<z>510</z>
+			<rx>0</rx>
+			<ry>0</ry>
+			<rz>0</rz>
+		</hotspot>
+
+		<!--
+		<hotspot>
+			<type>toPano</type>
+			<parentPano>Theta-BridgeNorth</parentPano>
+			<value>Theta-WestView</value>
+			<transition></transition>
+			<x>100</x>
+			<y>0</y>
+			<z>510</z>
+			<rx>0</rx>
+			<ry>0</ry>
+			<rz>0</rz>
+		</hotspot>
+-->
+
+		<hotspot>
+			<type>toPano</type>
+			<parentPano>Theta-WestView</parentPano>
+			<value>Theta-UnderBridge</value>
+			<transition>images/quickview/Theta-RoadTrees.jpg</transition>
+			<x>100</x>
+			<y>0</y>
+			<z>510</z>
+			<rx>0</rx>
+			<ry>0</ry>
+			<rz>0</rz>
+		</hotspot>
+
+		<!--
+		<hotspot>
+			<type>toPano</type>
+			<parentPano>Theta-NorthQueensferry</parentPano>
+			<value>Theta-NQLighthouse</value>
+			<transition></transition>
+			<x>100</x>
+			<y>0</y>
+			<z>510</z>
+			<rx>0</rx>
+			<ry>0</ry>
+			<rz>0</rz>
+		</hotspot>
+
+		<hotspot>
+			<type>toPano</type>
+			<parentPano>Theta-NQLighthouse</parentPano>
+			<value>Theta-UnderBridge</value>
+			<transition></transition>
+			<x>100</x>
+			<y>0</y>
+			<z>510</z>
+			<rx>0</rx>
+			<ry>0</ry>
+			<rz>0</rz>
+		</hotspot>
+		-->
+
+		<hotspot>
+			<type>toPano</type>
+			<parentPano>Theta-UnderBridge</parentPano>
+			<value>Theta-RoadTrees</value>
+			<transition>images/quickview/Theta-RoadTrees.jpg</transition>
+			<x>100</x>
+			<y>0</y>
+			<z>510</z>
+			<rx>0</rx>
+			<ry>0</ry>
+			<rz>0</rz>
+		</hotspot>
+
+		<hotspot>
+			<type>toPano</type>
+			<parentPano>Theta-RoadTrees</parentPano>
+			<value>SouthPier-LoRes</value>
+			<transition>images/quickview/Theta-RoadTrees.jpg</transition>
+			<x>100</x>
+			<y>0</y>
+			<z>510</z>
+			<rx>0</rx>
+			<ry>0</ry>
+			<rz>0</rz>
+		</hotspot>
+
+	</hotspots>
+	<startnode>NorthPier-LoRes</startnode>
+</panotour>
+
